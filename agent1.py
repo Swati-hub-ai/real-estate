@@ -11,7 +11,7 @@ blip_model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image
 
 
 # agent1.py or agent2.py
-HF_TOKEN = os.getenv("HUGGINGFAC_API_TOKEN") or st.secrets["HUGGINGFACE_API_TOKEN"]
+HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN") or st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 
 
 # Load Hugging Face Inference Client for LLM
