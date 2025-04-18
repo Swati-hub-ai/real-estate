@@ -29,7 +29,7 @@ def get_image_description(image_path):
 
 # Send caption to LLM for troubleshooting advice
 def get_troubleshooting_suggestion(caption):
-    prompt = f"""You are a helpful assistant diagnosing property issues.
+    prompt = f"""You are a helpful assistant diagnosing real estate property issues.
 Image Description: "{caption}"
 Give a helpful, actionable suggestion to fix or inspect the issue in detail."""
 
