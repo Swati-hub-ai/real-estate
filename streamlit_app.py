@@ -3,6 +3,12 @@ from agent1 import agent1_flow  # Your function to process image and return (cap
 from agent2 import ask_tenancy_faq  # Your text-based agent
 from router import route_message
 
+import streamlit as st
+import os
+
+HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN") or st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+
+
 st.set_page_config(page_title="PropertyLoop Assistant", layout="centered")
 st.title("🏡 PropertyLoop Multi-Agent Assistant")
 
