@@ -5,7 +5,7 @@ import streamlit as st
 # agent1.py or agent2.py
 HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN") or st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 
-llm_client = InferenceClient(model="mistralai/Mistral-7B-Instruct-v0.3", token=HF_TOKEN)
+llm_client = InferenceClient(model="HuggingFaceH4/zephyr-7b-beta", token=HF_TOKEN)
 
 def ask_tenancy_faq(question, location=None):
     prompt = f"""You are a legal assistant that helps renters understand tenancy laws, rental agreements, landlord responsibilities, and deposit issues.
