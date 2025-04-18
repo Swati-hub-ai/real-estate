@@ -3,13 +3,19 @@ from huggingface_hub import InferenceClient
 from PIL import Image
 import torch
 import os
+import streamlit as st
 
 # Load BLIP for image captioning
 blip_processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base", use_fast=True)
 blip_model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 
+
+# agent1.py or agent2.py
+HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN") or st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+
+
 # Load Hugging Face Inference Client for LLM
-HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+
 llm_client = InferenceClient(model="mistralai/Mistral-7B-Instruct-v0.3", token=HF_TOKEN)
 
 # Get image caption using BLIP

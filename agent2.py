@@ -1,7 +1,10 @@
 from huggingface_hub import InferenceClient
 import os
+import streamlit as st
 
-HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN") 
+# agent1.py or agent2.py
+HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN") or st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+
 llm_client = InferenceClient(model="mistralai/Mistral-7B-Instruct-v0.3", token=HF_TOKEN)
 
 def ask_tenancy_faq(question, location=None):
