@@ -16,7 +16,7 @@ HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN") or st.secrets["HUGGINGFACEHUB_A
 
 # Load Hugging Face Inference Client for LLM
 
-llm_client = InferenceClient(model="mistralai/Mistral-7B-Instruct-v0.3", token=HF_TOKEN)
+llm_client = InferenceClient(model="HuggingFaceH4/zephyr-7b-beta", token=HF_TOKEN)
 
 # Get image caption using BLIP
 def get_image_description(image_path):
